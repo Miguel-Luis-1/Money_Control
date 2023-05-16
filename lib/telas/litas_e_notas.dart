@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:money_control/widgets/conta.dart';
+import 'package:money_control/telas/Criar_Conta.dart';
 
 class ListaENotas extends StatefulWidget {
   const ListaENotas({Key? key}) : super(key: key);
@@ -87,7 +88,9 @@ class _ListaENotasState extends State<ListaENotas> {
                     listConteudo.add('Conta');
                   });
                   Navigator.of(context).pop();
-                  Navigator.pushNamed(context, 'package:money_control/telas/Criar_Conta');
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => CriarConta())
+                  );
                 },
               ),
               ListTile(
@@ -97,6 +100,7 @@ class _ListaENotasState extends State<ListaENotas> {
                     listConteudo.add('Lista de compras');
                   });
                   Navigator.of(context).pop();
+
                   // Implemente a ação para ir para a tela de Lista de compras
                 },
               ),

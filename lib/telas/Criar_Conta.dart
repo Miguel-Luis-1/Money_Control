@@ -1,14 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:money_control/widgets/conta.dart';
+import 'package:money_control/main.dart';
 
-class ListaENotas extends StatefulWidget {
-  const ListaENotas({Key? key}) : super(key: key);
+class CriarConta extends StatefulWidget {
+  const CriarConta({Key? key}) : super(key: key);
 
   @override
-  _ListaENotasState createState() => _ListaENotasState();
+  _CriarConta createState() => _CriarConta();
 }
 
-class _ListaENotasState extends State<ListaENotas> {
+class _CriarConta extends State<CriarConta> {
   int _selectedIndex = 0;
   List<String> listConteudo = [];
 
@@ -18,6 +19,7 @@ class _ListaENotasState extends State<ListaENotas> {
       // Implemente a ação para ir para a tela correspondente ao item selecionado
     });
   }
+
 
   @override
   Widget build(BuildContext context) {
@@ -60,5 +62,4 @@ class _ListaENotasState extends State<ListaENotas> {
       ),
     );
   }
-
 }
