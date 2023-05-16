@@ -42,17 +42,6 @@ class _ListaENotasState extends State<ListaENotas> {
           ),
         ],
       ),
-      floatingActionButton: FloatingActionButton( // Botão de adicionar nota/lista
-        onPressed: () {
-          _mostrarModal(context);
-        },
-        child: Icon(Icons.edit, color: Colors.white), // ícone branco
-        backgroundColor: Colors.green, // Cor do botão
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), // Ajusta as bordas do botão
-        ),
-      ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       bottomNavigationBar: BottomNavigationBar( // Barra de navegação
         backgroundColor: Color(0xFF0C2A3D),
         items: <BottomNavigationBarItem>[
@@ -72,38 +61,4 @@ class _ListaENotasState extends State<ListaENotas> {
     );
   }
 
-  void _mostrarModal(BuildContext context) {  // Modal de opções de lista/notas
-    showModalBottomSheet(
-      context: context,
-      builder: (BuildContext context) {
-        return Container(
-          height: 200,
-          child: Column(
-            children: [
-              ListTile(
-                title: Text('Contas'), // label branco
-                onTap: () {
-                  setState(() {
-                    listConteudo.add('Conta');
-                  });
-                  Navigator.of(context).pop();
-                  Navigator.pushNamed(context, 'package:money_control/telas/Criar_Conta');
-                },
-              ),
-              ListTile(
-                title: Text('Lista de compras'), // label branco
-                onTap: () {
-                  setState(() {
-                    listConteudo.add('Lista de compras');
-                  });
-                  Navigator.of(context).pop();
-                  // Implemente a ação para ir para a tela de Lista de compras
-                },
-              ),
-            ],
-          ),
-        );
-      },
-    );
-  }
 }

@@ -11,6 +11,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return const MaterialApp(
       debugShowCheckedModeBanner: false, // definindo para não mostrar o banner de debug
       home: const ListaENotas(),
@@ -19,3 +20,5 @@ class MyApp extends StatelessWidget {
 
 
 }
+
+
