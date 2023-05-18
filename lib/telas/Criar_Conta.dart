@@ -44,22 +44,6 @@ class _CriarConta extends State<CriarConta> {
           ),
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar( // Barra de navegação
-        backgroundColor: Color(0xFF0C2A3D),
-        items: <BottomNavigationBarItem>[
-          BottomNavigationBarItem(
-            icon: Icon(Icons.library_books_sharp, color: Colors.white, size: 40, ), // ícone branco
-            label: 'Contas/Listas',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(Icons.monetization_on, color: Colors.white, size: 40,),
-            label: 'Dados Financeiros',
-          ),
-        ],
-        currentIndex: _selectedIndex,
-        selectedItemColor: Colors.green,
-        onTap: _onItemTapped,
-      ),
     );
   }
 }
