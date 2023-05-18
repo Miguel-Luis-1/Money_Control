@@ -23,6 +23,16 @@ class _HomePageState extends State<HomePage> {
     pagController = PageController(initialPage: paginaAtual); 
   }
 
+  setPaginaAtula(pagina) { 
+// Metodo para que quando a pagina atuao for alterada ela posa mudat o currentIndex 
+    setState(() {
+      
+      paginaAtual = pagina;
+
+    });
+
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,6 +42,28 @@ class _HomePageState extends State<HomePage> {
           ListaENotas(),
           Dados(),
         ],
+
+      onPageChanged: setPaginaAtula,
+
+      ),
+      bottomNavigationBar: BottomNavigationBar( // Barra de navegação
+        currentIndex: paginaAtual,
+        items: [ // Itens da barra de navegação
+
+          BottomNavigationBarItem(icon: Icon(Icons.library_books), label: 'Contas e Listas'),
+          BottomNavigationBarItem(icon: Icon(Icons.monetization_on), label: 'Dados Financeiros'),
+        ],
+        
+
+      onTap: (pagina) {
+
+        pagController.animateToPage(pagina, 
+          duration: Duration(microseconds: 400), // Tempo ao passar a pagina
+          curve: Curves.ease // Animação ao passar a pagina 
+          );
+
+      },
+
       ),
     );
   }
