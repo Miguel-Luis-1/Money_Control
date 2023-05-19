@@ -17,6 +17,7 @@ Widget build(BuildContext context) {
       borderRadius: BorderRadius.circular(9),
     ),
 
+    margin: const EdgeInsets.symmetric(vertical: 4),
     padding: const EdgeInsets.all(10),
     child: Column(
       crossAxisAlignment: CrossAxisAlignment.start,
