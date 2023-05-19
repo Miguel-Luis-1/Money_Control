@@ -20,38 +20,41 @@ class _ListaENotasState extends State<ListaENotas> {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xFF93D1FA), // Cor de fundo da página
-      body: Column(
-        children: [
-          Flexible(
-            child: Center(
-              child: Padding(
-                padding: const EdgeInsets.only(left: 20, right: 20),
-                child: ListView(
-                  children: [
-                    for (String todo in listConteudo)
-                      Conta(),
-                    for (String todo in listConteudoListas)
-                      Lista(),  
-                  ],
+    return SafeArea(
+      child: Scaffold(
+        backgroundColor: Color(0xFF93D1FA), // Cor de fundo da página
+        body: Column(
+          children: [
+            Flexible(
+             
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 20, right: 20),
+                  child: ListView(
+                    shrinkWrap: true,
+                    children: [
+                      for (String todo in listConteudo)
+                        Conta(),
+                      for (String todo in listConteudoListas)
+                        Lista(),  
+                    ],
+                  ),
                 ),
               ),
-            ),
-          ),
-        ],
-      ),
-      floatingActionButton: FloatingActionButton( // Botão de adicionar nota/lista
-        onPressed: () {
-          _mostrarModal(context);
-        },
-        child: Icon(Icons.edit, color: Colors.white), // ícone branco
-        backgroundColor: Colors.green, // Cor do botão
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(10), // Ajusta as bordas do botão
+           
+          ],
         ),
+        floatingActionButton: FloatingActionButton( // Botão de adicionar nota/lista
+          onPressed: () {
+            _mostrarModal(context);
+          },
+          child: Icon(Icons.edit, color: Colors.white), // ícone branco
+          backgroundColor: Colors.green, // Cor do botão
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(10), // Ajusta as bordas do botão
+          ),
+        ),
+        floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
       ),
-      floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
     );
   }
 
