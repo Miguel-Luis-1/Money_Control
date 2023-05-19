@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:money_control/telas/Criar_Lista.dart';
 import 'package:money_control/widgets/conta.dart';
+import 'package:money_control/widgets/lista.dart';
 import 'package:money_control/telas/Criar_Conta.dart';
 
 class ListaENotas extends StatefulWidget {
@@ -13,6 +14,7 @@ class ListaENotas extends StatefulWidget {
 class _ListaENotasState extends State<ListaENotas> {
   int _selectedIndex = 0;
   List<String> listConteudo = [];
+  List<String> listConteudoListas = [];
 
 
 
@@ -30,6 +32,8 @@ class _ListaENotasState extends State<ListaENotas> {
                   children: [
                     for (String todo in listConteudo)
                       Conta(),
+                    for (String todo in listConteudoListas)
+                      Lista(),  
                   ],
                 ),
               ),
@@ -75,7 +79,7 @@ class _ListaENotasState extends State<ListaENotas> {
                 title: Text('Lista de compras'), // label branco
                 onTap: () {
                   setState(() {
-                    listConteudo.add('');
+                    listConteudoListas.add('');
                   });
                   Navigator.of(context).pop();
                   Navigator.of(context).push(
