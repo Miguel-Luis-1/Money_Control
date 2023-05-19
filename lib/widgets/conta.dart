@@ -4,19 +4,33 @@ import 'package:flutter/material.dart';
 class Conta extends StatelessWidget {  const Conta({Key? key}) : super(key: key);
 
 Widget build(BuildContext context) {
-  return Container(
-    color: Colors.white,
-    padding: const EdgeInsets.all(16),
-    child: Column(
 
+  return Container(
+
+
+    decoration: BoxDecoration(
+      color: Colors.white,
+      border: Border.all(
+        color: Colors.black,
+        width: 2.0,
+      ),
+      borderRadius: BorderRadius.circular(9),
+    ),
+
+    padding: const EdgeInsets.all(10),
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
 
         Text('Conta de Luz'),
-        Text('12/01/2029')
+        Text('12/01/2029'),
+        
 
       ],
-
     ),
+
   );
+
 }
+
 }
