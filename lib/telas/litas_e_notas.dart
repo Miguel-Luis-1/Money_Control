@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:money_control/telas/Criar_Lista.dart';
 import 'package:money_control/widgets/conta.dart';
 import 'package:money_control/telas/Criar_Conta.dart';
 
@@ -13,12 +14,7 @@ class _ListaENotasState extends State<ListaENotas> {
   int _selectedIndex = 0;
   List<String> listConteudo = [];
 
-  void _onItemTapped(int index) {
-    setState(() {
-      _selectedIndex = index;
-      // Implemente a ação para ir para a tela correspondente ao item selecionado
-    });
-  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -33,9 +29,7 @@ class _ListaENotasState extends State<ListaENotas> {
                 child: ListView(
                   children: [
                     for (String todo in listConteudo)
-                      ListTile(
-                        title: Text(todo),
-                      ),
+                      Conta(),
                   ],
                 ),
               ),
@@ -69,7 +63,7 @@ class _ListaENotasState extends State<ListaENotas> {
                 title: Text('Contas'), // label branco
                 onTap: () {
                   setState(() {
-                    listConteudo.add('Conta');
+                    listConteudo.add('');
                   });
                   Navigator.of(context).pop();
                   Navigator.of(context).push(
@@ -81,11 +75,12 @@ class _ListaENotasState extends State<ListaENotas> {
                 title: Text('Lista de compras'), // label branco
                 onTap: () {
                   setState(() {
-                    listConteudo.add('Lista de compras');
+                    listConteudo.add('');
                   });
                   Navigator.of(context).pop();
-
-                  // Implemente a ação para ir para a tela de Lista de compras
+                  Navigator.of(context).push(
+                    MaterialPageRoute(builder: (context) => CriarLista())
+                  );
                 },
               ),
             ],

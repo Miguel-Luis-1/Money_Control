@@ -39,11 +39,13 @@ class _CriarConta extends State<CriarConta> {
                       ),
                   ],
                 ),
+                
               ),
             ),
           ),
         ],
       ),
+      
     );
   }
 }
