@@ -16,7 +16,11 @@ class _ListaENotasState extends State<ListaENotas> {
   List<String> listConteudo = [];
   List<String> listConteudoListas = [];
 
-
+void onDelet(String todo ){
+  setState(() {
+    listConteudo.remove(todo);
+  });
+}
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +37,7 @@ class _ListaENotasState extends State<ListaENotas> {
                     shrinkWrap: true,
                     children: [
                       for (String todo in listConteudo)
-                        Conta(),
+                        Conta(),      
                       for (String todo in listConteudoListas)
                         Lista(),  
                     ],
