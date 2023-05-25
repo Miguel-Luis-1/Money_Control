@@ -4,6 +4,7 @@ import 'package:money_control/widgets/conta.dart';
 import 'package:money_control/widgets/lista.dart';
 import 'package:money_control/telas/Criar_Conta.dart';
 
+// teste
 class ListaENotas extends StatefulWidget {
   const ListaENotas({Key? key}) : super(key: key);
 
@@ -16,11 +17,11 @@ class _ListaENotasState extends State<ListaENotas> {
   List<String> listConteudo = [];
   List<String> listConteudoListas = [];
 
-void onDelet(String todo ){
-  setState(() {
-    listConteudo.remove(todo);
-  });
-}
+  void onDelet(String todo) {
+    setState(() {
+      listConteudo.remove(todo);
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,31 +31,29 @@ void onDelet(String todo ){
         body: Column(
           children: [
             Flexible(
-             
-                child: Padding(
-                  padding: const EdgeInsets.only(left: 20, right: 20),
-                  child: ListView(
-                    shrinkWrap: true,
-                    children: [
-                      for (String todo in listConteudo)
-                        Conta(),      
-                      for (String todo in listConteudoListas)
-                        Lista(),  
-                    ],
-                  ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 20, right: 20),
+                child: ListView(
+                  shrinkWrap: true,
+                  children: [
+                    for (String todo in listConteudo) Conta(),
+                    for (String todo in listConteudoListas) Lista(),
+                  ],
                 ),
               ),
-           
+            ),
           ],
         ),
-        floatingActionButton: FloatingActionButton( // Botão de adicionar nota/lista
+        floatingActionButton: FloatingActionButton(
+          // Botão de adicionar nota/lista
           onPressed: () {
             _mostrarModal(context);
           },
           child: Icon(Icons.edit, color: Colors.white), // ícone branco
           backgroundColor: Colors.green, // Cor do botão
           shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(10), // Ajusta as bordas do botão
+            borderRadius:
+                BorderRadius.circular(10), // Ajusta as bordas do botão
           ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.endFloat,
@@ -62,7 +61,8 @@ void onDelet(String todo ){
     );
   }
 
-  void _mostrarModal(BuildContext context) {  // Modal de opções de lista/notas
+  void _mostrarModal(BuildContext context) {
+    // Modal de opções de lista/notas
     showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
@@ -78,8 +78,7 @@ void onDelet(String todo ){
                   });
                   Navigator.of(context).pop();
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => CriarConta())
-                  );
+                      MaterialPageRoute(builder: (context) => CriarConta()));
                 },
               ),
               ListTile(
@@ -90,8 +89,7 @@ void onDelet(String todo ){
                   });
                   Navigator.of(context).pop();
                   Navigator.of(context).push(
-                    MaterialPageRoute(builder: (context) => CriarLista())
-                  );
+                      MaterialPageRoute(builder: (context) => CriarLista()));
                 },
               ),
             ],
