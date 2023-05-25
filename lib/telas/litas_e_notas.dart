@@ -27,6 +27,13 @@ class _ListaENotasState extends State<ListaENotas> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: PreferredSize(
+          preferredSize: Size.fromHeight(40.0),
+          child: AppBar(
+            backgroundColor: Color(0xFF93D1FA),
+            shadowColor: Color(0xFF93D1FA),
+          ),
+        ),
         backgroundColor: Color(0xFF93D1FA), // Cor de fundo da página
         body: Column(
           children: [
