@@ -20,10 +20,16 @@ class _CriarLista extends State<CriarLista> {
     });
   }
 
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(40.0),
+        child: AppBar(
+          backgroundColor: Color(0xFF93D1FA),
+          shadowColor: Color(0xFF93D1FA),
+        ),
+      ),
       backgroundColor: Color(0xFF93D1FA), // Cor de fundo da página
       body: Column(
         children: [
