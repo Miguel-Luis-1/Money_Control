@@ -16,8 +16,7 @@ class _ContaState extends State<Conta> {
 
   @override
   Widget build(BuildContext context) {
-    return Slidable(
-      child: Container(
+    return Container(
         decoration: BoxDecoration(
           color: Colors.white,
           border: Border.all(
@@ -50,7 +49,6 @@ class _ContaState extends State<Conta> {
             ),
           ],
         ),
-      ),
     );
   }
 }
